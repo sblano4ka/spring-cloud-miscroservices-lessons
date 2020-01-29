@@ -3,10 +3,18 @@ EUREKA
 Troubleshooting
 
 1. Connection refused.
-Reason: Eureka tries to connect itself and searches for replicas.
+Reason: Eureka tries to register with itself and searches for replicas.
 
 Anyway it is started, but without context path.
 
 Fix to remove stacktrace:
 eureka.client.register-with-eureka=false
 eureka.client.fetch-registry=false
+
+
+2. UNKNOWN client name on EUREKA
+Add property
+spring.application.name=movie-info-service
+
+3. Service is not registered when eureka is not on default port
+SO, add property where specify eureka.port

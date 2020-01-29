@@ -1,6 +1,4 @@
-My Microservices!!!!
-
-
+----my microservices urls---
 
 
 Movie Info Service:
@@ -21,13 +19,16 @@ http://localhost:8761/
 
 
 
-ToDo:
+ToRead:
 
 Netflix OSS  (what is, what services)
+How Eureka works ?
+Circuit breaker (histrix) ?
 What is Mono and Flex ?
 Web Reactive without waiting
 
 
 
-KILL APP ON PORT
+
+-----commands useful----
 sudo kill -9 `sudo lsof -t -i:8081`
