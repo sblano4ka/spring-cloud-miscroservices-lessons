@@ -1,0 +1,12 @@
+EUREKA
+
+Troubleshooting
+
+1. Connection refused.
+Reason: Eureka tries to connect itself and searches for replicas.
+
+Anyway it is started, but without context path.
+
+Fix to remove stacktrace:
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false

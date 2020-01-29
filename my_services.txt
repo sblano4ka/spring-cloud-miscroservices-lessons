@@ -1,0 +1,33 @@
+My Microservices!!!!
+
+
+
+
+Movie Info Service:
+http://localhost:8083/movies/456
+
+
+Rating Data Service
+http://localhost:8082/ratingsdata/456
+http://localhost:8082/ratingsdata/users/userId
+
+
+Movie Catalog (aggregator)
+http://localhost:8081/catalog/userid
+
+
+Eureka
+http://localhost:8761/
+
+
+
+ToDo:
+
+Netflix OSS  (what is, what services)
+What is Mono and Flex ?
+Web Reactive without waiting
+
+
+
+KILL APP ON PORT
+sudo kill -9 `sudo lsof -t -i:8081`
