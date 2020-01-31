@@ -11,7 +11,7 @@
     <groupId>com.svitlana</groupId>
     <artifactId>movie-info-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>movie-info-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

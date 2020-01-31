@@ -5,7 +5,6 @@ import com.svitlana.moviecatalogservice.model.Movie;
 import com.svitlana.moviecatalogservice.model.Rating;
 import com.svitlana.moviecatalogservice.model.UserRatings;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +22,8 @@ public class MovieCatalogResource {
     private RestTemplate restTemplate;
 
     // Can be used to advanced load balancing and getting more precise info from eureka
-    @Autowired
-    private DiscoveryClient discoveryClient;
+//    @Autowired
+//    private DiscoveryClient discoveryClient;
 
 //    @Autowired
 //    private WebClient.Builder webClientBuilder;
