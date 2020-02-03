@@ -23,7 +23,9 @@ ToRead:
 
 Netflix OSS  (what is, what services)
 How Eureka works ?
-Circuit breaker (histrix) ?
+Resilience patterns/Circuit breaker (histrix) ?
+Ribbon =  
+
 What is Mono and Flex ?
 Web Reactive without waiting
 

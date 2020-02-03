@@ -1,0 +1,18 @@
+Fault Tolerance
+
+
+1. Service goes down
+You should have multiple instances handled by Ribbon and registered in Eureka
+
+2. Services are slow
+When one service is slow it may lead to available threads descreasing and as a ersult will make connections to other services slow too.
+
+2.1 Have timeout for requests
+e.g in RestTemplate
+still problem as threads are blocked even for short time and it in big perspective will lead to no free threads
+
+
+2.2 Circuit breaker
+Detect smth is wrong
+Take temp steps not to have it getting worse
+Deactivate the "problem" to not affect downstream components
