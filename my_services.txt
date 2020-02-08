@@ -21,14 +21,14 @@ http://localhost:8761/
 
 ToRead:
 
-Netflix OSS  (what is, what services)
+Netflix OSS  (what is, what services) do we need it  now ?
 How Eureka works ?
 Resilience patterns/Circuit breaker (histrix) ?
-Ribbon =  
+Ribbon =
+
 
 What is Mono and Flex ?
 Web Reactive without waiting
-
 
 
 

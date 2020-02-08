@@ -16,3 +16,10 @@ still problem as threads are blocked even for short time and it in big perspecti
 Detect smth is wrong
 Take temp steps not to have it getting worse
 Deactivate the "problem" to not affect downstream components
+Especially important when there are few calls to separate services in one service
+If there are 2 cals with one method, histrix will not work cause it is a proxy and proxy has no affect on internal calls.
+So all @HystrixCommand method should be placed in another class.
+
+2.3 Bulkhead patterns
+Have separate thread pools for every service
+Can be setup via Hystrix as well @HystrixCommand

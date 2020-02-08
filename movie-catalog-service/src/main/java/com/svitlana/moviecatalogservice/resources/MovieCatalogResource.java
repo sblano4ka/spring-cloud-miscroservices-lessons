@@ -1,9 +1,9 @@
 package com.svitlana.moviecatalogservice.resources;
 
 import com.svitlana.moviecatalogservice.model.CatalogItem;
-import com.svitlana.moviecatalogservice.model.Movie;
-import com.svitlana.moviecatalogservice.model.Rating;
 import com.svitlana.moviecatalogservice.model.UserRatings;
+import com.svitlana.moviecatalogservice.service.MovieInfoService;
+import com.svitlana.moviecatalogservice.service.UserRatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +21,13 @@ public class MovieCatalogResource {
     @Autowired
     private RestTemplate restTemplate;
 
-    // Can be used to advanced load balancing and getting more precise info from eureka
+    @Autowired
+    private MovieInfoService movieInfoService;
+
+    @Autowired
+    private UserRatingService userratingService;
+
+// Can be used to advanced load balancing and getting more precise info from eureka
 //    @Autowired
 //    private DiscoveryClient discoveryClient;
 
@@ -30,23 +36,13 @@ public class MovieCatalogResource {
 
     @GetMapping(value = "/{userId}")
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
-        // get user rated movies
-        String userRatingsUrl = "http://ratings-data-service/ratingsdata/users/";
-        UserRatings usersRatings = restTemplate.getForObject(userRatingsUrl + userId, UserRatings.class);
-
-        // get movie info
+        UserRatings usersRatings = userratingService.getUserRatings(userId);
         return usersRatings.getUserRating()
                 .stream()
-                .map(rating -> getCatalogItem(restTemplate, rating))
+                .map(userRating -> movieInfoService.getCatalogItem(userRating))
                 .collect(Collectors.toList());
     }
 
-    private CatalogItem getCatalogItem(final RestTemplate restTemplate, final Rating rating) {
-        // get movie details
-        String movieInfoUrl = "http://movie-info-service:8083/movies/";
-        Movie movie = restTemplate.getForObject(movieInfoUrl + rating.getMovieId(), Movie.class);
-        return new CatalogItem(movie.getMovieId(), movie.getName(), movie.getDescription(), rating.getRating());
-    }
 
 //    private void webFlux() {
 //            Movie movie = webClientBuilder.build()
