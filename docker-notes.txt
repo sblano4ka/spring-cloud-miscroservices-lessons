@@ -1,0 +1,13 @@
+FIRST SHOULD WORK LOCALLY!!!!
+
+1. Add dockerfile to every service
+2. Add docker aws json to every microservice
+3. deploy eureka
+4. Setup eureka url  in all others
+5. Deploy service 2 and make sure service 2 is visible for eureka
+4. Deploy all other services so they are visible on EUREKA
+6. BE HAPPY!
+
+
+? How to run spring app immediately in CMD in RUN ?
+? Ports exposing ?

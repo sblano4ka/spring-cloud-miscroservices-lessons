@@ -1,0 +1,7 @@
+Actuators:
+
+
+http://localhost:8083/actuator/health
+http://localhost:8083/actuator/metrics
+http://localhost:8083/actuator/beans
+http://localhost:8083/actuator/heapdump 
