@@ -11,3 +11,16 @@ FIRST SHOULD WORK LOCALLY!!!!
 
 ? How to run spring app immediately in CMD in RUN ?
 ? Ports exposing ?
+
+
+
+Commands:
+
+docker build -t movie-catalog-service .
+docker run -p 8081:8081 movie-catalog-service
+
+docker build -t rating-data-service .
+docker run -p 8082:8082 rating-data-service
+
+docker build -t movie-info-service .
+docker run -p 8083:8083 movie-info-service
